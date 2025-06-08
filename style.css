@@ -1,0 +1,220 @@
+body {
+  font-family: 'Heebo', Arial, sans-serif;
+  background: linear-gradient(135deg, #fffbe6 0%, #ffd700 100%);
+  color: #232323;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  direction: rtl;
+}
+
+.site-logo {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  height: 56px;
+  width: auto;
+  z-index: 100;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(220,175,55,0.08);
+  padding: 6px 10px;
+  transition: box-shadow 0.3s;
+}
+.site-logo:hover {
+  box-shadow: 0 4px 24px rgba(212, 175, 55, 0.25);
+}
+@media (max-width:600px) {
+  .site-logo {
+    top: 8px;
+    right: 8px;
+    height: 36px;
+    padding: 3px 5px;
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+header {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+}
+header h1 {
+  color: #b8860b;
+  font-size: 2.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.desc-main {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #232323;
+}
+.desc-main strong {
+  color: #dc143c;
+  font-weight: bold;
+}
+.for-singers {
+  background: #fff3cd;
+  border: 2px solid #ffe066;
+  color: #b94a00;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.section-title {
+  font-size: 1.35rem;
+  color: #b8860b;
+  margin: 1.8rem 0 1rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+form {
+  background: #fff;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+.form-group {
+  margin-bottom: 1.3rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.55rem;
+  font-size: 1rem;
+  border: 1.5px solid #bbb;
+  border-radius: 7px;
+  transition: border-color 0.25s;
+  background: #fcfcfc;
+}
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus {
+  border-color: #d4af37;
+}
+.bpm-choice {
+  display: flex;
+  gap: 1.6rem;
+  margin-top: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+.bpm-choice label {
+  font-weight: 400;
+}
+#gayd-group {
+  display: none;
+  margin-bottom: 1rem;
+}
+.legal-decl {
+  background: #f7e8e4;
+  border: 2px solid #dc143c;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  color: #a94442;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+  font-weight: bold;
+  line-height: 1.7;
+  box-shadow: 0 0 7px #ffe6e6;
+}
+.checkbox-label {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+.submit-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #ffd700 70%, #b8860b 100%);
+  color: #232323;
+  border: none;
+  border-radius: 7px;
+  padding: 0.95rem;
+  font-size: 1.19rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.2s;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.submit-btn:hover {
+  background: linear-gradient(90deg, #ffe066 60%, #b8860b 100%);
+}
+.section-title-small {
+  font-size: 1.13rem;
+  color: #888;
+  margin: 1.3rem 0 0.5rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+#youtube-form {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1rem 1.2rem 0.5rem 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+#youtube-form label {
+  font-weight: 500;
+}
+#youtube-form input[type="url"] {
+  margin-bottom: 0.7rem;
+}
+#add-youtube-btn {
+  background: #ffd700;
+  color: #232323;
+  border: none;
+  border-radius: 5px;
+  padding: 0.45rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+#add-youtube-btn:hover {
+  background: #ffe066;
+}
+#last-youtube-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 1.2rem;
+}
+.yt-embed {
+  background: #fdf6e3;
+  border-radius: 7px;
+  padding: 0.5rem;
+  box-shadow: 0 0 6px #ffe0662a;
+  text-align: center;
+}
+.yt-embed iframe {
+  width: 100%;
+  max-width: 390px;
+  height: 220px;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 0.3rem;
+  background: #111;
+}
+@media (max-width:600px) {
+  .container { padding: 1rem 0.2rem; }
+  .yt-embed iframe { height: 180px; }
+  form, #youtube-form { padding: 1rem 0.5rem;}
+}

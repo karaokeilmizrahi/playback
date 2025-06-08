@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תרומת פלייבק לקריוקי מזרחי</title>
+  <style>
+    body {
+      font-family: 'Heebo', Arial, sans-serif;
+      background: linear-gradient(135deg, #222835 0%, #323b4b 100%);
+      color: #e8eaf2;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      direction: rtl;
+    }
+    .site-logo {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      height: 50px;
+      width: auto;
+      z-index: 100;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(60,80,120,0.11);
+      padding: 5px 8px;
+      transition: box-shadow 0.3s;
+      background: transparent;
+    }
+    .site-logo:hover {
+      box-shadow: 0 4px 24px rgba(95,120,200,0.22);
+    }
+    @media (max-width:600px) {
+      .site-logo {
+        top: 8px;
+        right: 8px;
+        height: 32px;
+        padding: 2px 4px;
+      }
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 0 1rem 0;
+    }
+    header h1 {
+      color: #dbe2ee;
+      font-size: 2.1rem;
+      margin-bottom: 0.6rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 10px #22283580;
+    }
+    .desc-main {
+      font-size: 1.15rem;
+      margin-bottom: 1.1rem;
+      color: #c6cbe0;
+      line-height: 1.7;
+    }
+    .desc-main strong {
+      color: #85b8ff;
+      font-weight: bold;
+    }
+    .for-singers {
+      background: #27304a;
+      border: 1.5px solid #39415a;
+      color: #a5b3d1;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 9px;
+      font-size: 1.04rem;
+      font-weight: 500;
+      text-align: center;
+      box-shadow: 0 2px 8px #23283b42;
+    }
+    .for-singers a { color: #b5d7ff; text-decoration: underline; }
+    .section-title {
+      font-size: 1.19rem;
+      color: #b5d7ff;
+      margin: 1.8rem 0 1rem 0;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 2px 10px #23283b60;
+    }
+    form {
+      background: #23283b;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      border-radius: 14px;
+      box-shadow: 0 3px 18px rgba(0,0,0,0.18);
+      margin-bottom: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #b5d7ff;
+    }
+    input[type="text"],
+    input[type="url"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 0.55rem;
+      font-size: 1rem;
+      border: 1.5px solid #444b5f;
+      border-radius: 7px;
+      transition: border-color 0.25s;
+      background: #262d3c;
+      color: #dbe2ee;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus,
+    input[type="url"]:focus,
+    input[type="number"]:focus,
+    textarea:focus {
+      border-color: #85b8ff;
+      background: #23283b;
+      color: #fff;
+      outline: none;
+    }
+    .bpm-choice {
+      display: flex;
+      gap: 1.1rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.7rem;
+    }
+    .bpm-choice label {
+      font-weight: 400;
+      color: #c6cbe0;
+    }
+    #gayd-group {
+      display: none;
+      margin-bottom: 1rem;
+    }
+    .legal-decl {
+      background: #272c3a;
+      border: 1.5px solid #9a3e3e;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      color: #ffb4b4;
+      font-size: 0.98rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      line-height: 1.7;
+      box-shadow: 0 0 7px #23283b;
+    }
+    .checkbox-label {
+      font-size: 1rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+      color: #e8eaf2;
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #4e81b8 70%, #30405a 100%);
+      color: #f1f1f1;
+      border: none;
+      border-radius: 6px;
+      padding: 0.95rem;
+      font-size: 1.13rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      box-shadow: 0 2px 10px #181f2e48;
+    }
+    .submit-btn:hover {
+      background: linear-gradient(90deg, #6cb5ff 50%, #31416a 100%);
+      color: #23283b;
+    }
+    .section-title-small {
+      font-size: 1.08rem;
+      color: #b5d7ff;
+      margin: 1.3rem 0 0.5rem 0;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 2px 8px #23283b40;
+    }
+    #youtube-form {
+      background: #242a39;
+      border-radius: 10px;
+      padding: 1rem 1.2rem 0.5rem 1.2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px #111a;
+      border: 1.5px solid #31384c;
+    }
+    #youtube-form label {
+      font-weight: 500;
+      color: #85b8ff;
+    }
+    #youtube-form input[type="url"] {
+      margin-bottom: 0.7rem;
+      color: #b5d7ff;
+      background: #232b3c;
+      border: 1.5px solid #444b5f;
+    }
+    #add-youtube-btn {
+      background: #4e81b8;
+      color: #f1f1f1;
+      border: none;
+      border-radius: 5px;
+      padding: 0.45rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+      transition: background 0.2s;
+    }
+    #add-youtube-btn:hover {
+      background: #6cb5ff;
+      color: #222835;
+    }
+    #last-youtube-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      margin-top: 1.2rem;
+    }
+    .yt-embed {
+      background: #232b3c;
+      border-radius: 7px;
+      padding: 0.5rem;
+      box-shadow: 0 0 6px #4e81b822;
+      text-align: center;
+      border: 1.5px solid #31384c;
+    }
+    .yt-embed iframe {
+      width: 100%;
+      max-width: 390px;
+      height: 220px;
+      border: none;
+      border-radius: 6px;
+      margin-bottom: 0.3rem;
+      background: #222;
+    }
+    @media (max-width:600px) {
+      .container { padding: 1rem 0.2rem; }
+      .yt-embed iframe { height: 180px; }
+      form, #youtube-form { padding: 1rem 0.5rem;}
+    }
+    .success-msg {
+      background: #26344a;
+      border: 1.5px solid #4e81b8;
+      color: #a6f9c7;
+      font-size: 1.07rem;
+      border-radius: 7px;
+      padding: 0.9rem 1.1rem;
+      margin: 1.2rem 0;
+      text-align: center;
+    }
+    .error-msg {
+      background: #2a1e23;
+      border: 1.5px solid #c55f67;
+      color: #ffb4b4;
+      font-size: 1.07rem;
+      border-radius: 7px;
+      padding: 0.9rem 1.1rem;
+      margin: 1.2rem 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Karaoke Il Mizrahi" class="site-logo">
+
+  <div class="container">
+    <header>
+      <h1>תרומת פלייבק לקריוקי מזרחי</h1>
+      <div class="desc-main">
+        עמוד זה מיועד ל<strong>מעבדים, נגנים ומוזיקאים</strong> המעוניינים לתרום פלייבק איכותי להפקות קריוקי מזרחי ביוטיוב. התרומה מזכה אתכם בקרדיט מלא על עיבוד/ביצוע הפלייבק בדף הקריוקי ובתיאור הסרטון.
+      </div>
+      <div class="for-singers">
+        <strong>זמרים:</strong> מעוניינים בהפקת קריוקי רשמי? פנו במייל לקבלת הצעת מחיר אטרקטיבית: 
+        <a href="mailto:karaokeilmizrahi@gmail.com">karaokeilmizrahi@gmail.com</a>
+      </div>
+    </header>
+
+    <div id="youtube-form">
+      <label for="youtube-link"><b>להציג קריוקי שכבר הסתיים?</b> הדביקו קישור ליוטיוב כאן:</label>
+      <input type="url" id="youtube-link" placeholder="קישור לסרטון ביוטיוב">
+      <button id="add-youtube-btn" type="button">הוסף קישור</button>
+      <div id="yt-msg" style="color:#c55f67; font-size:0.96rem; margin-top:0.2rem;"></div>
+    </div>
+
+    <div class="section-title-small">4 הקריוקי האחרונים שהושלמו</div>
+    <div id="last-youtube-list"></div>
+
+    <div class="section-title">טופס תרומת פלייבק לקריוקי</div>
+    <!-- FORM USING FORMSUBMIT.CO FOR DIRECT EMAIL, NO REGISTRATION REQUIRED -->
+    <form id="playback-form" action="https://formsubmit.co/karaokeilmizrahi@gmail.com" method="POST" autocomplete="off">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_subject" value="תרומת פלייבק מקריוקי מזרחי">
+      <div class="legal-decl">
+        אני מצהיר/ה בזאת כי הפלייבק שאני שולח/ת אינו עיבוד מקורי של הזמר/היוצר, אינו מועתק ממקור מוגן, ולא חלות עליו זכויות יוצרים של צד ג'. אני הבעלים החוקי של הפלייבק או מחזיק בזכויות הדרושות להפקתו והפצתו. ידוע לי כי כל מסירת פלייבק מקורי/מוגן ללא רשות מהווה עבירה על חוק זכויות יוצרים, ועליי האחריות המלאה לכל טענה שתועלה מצד בעלי הזכויות.
+      </div>
+      <div class="form-group">
+        <label for="arranger">שם המעבד/נגן *</label>
+        <input type="text" id="arranger" name="שם המעבד/נגן" required>
+      </div>
+      <div class="form-group">
+        <label for="song-name">שם השיר *</label>
+        <input type="text" id="song-name" name="שם השיר" required>
+      </div>
+      <div class="form-group">
+        <label for="original-artist">שם הזמר המקורי *</label>
+        <input type="text" id="original-artist" name="שם הזמר המקורי" required>
+      </div>
+      <div class="form-group">
+        <label>האם קצב הפלייבק (BPM) תואם למקור?</label>
+        <div class="bpm-choice">
+          <label><input type="radio" name="קצב תואם למקור" value="כן" checked> כן</label>
+          <label><input type="radio" name="קצב תואם למקור" value="לא"> לא</label>
+        </div>
+      </div>
+      <div class="form-group" id="gayd-group">
+        <label for="bpm">מהו קצב הפלייבק (BPM)? *</label>
+        <input type="number" id="bpm" name="BPM הפלייבק" min="40" max="250" placeholder="לדוג' 120">
+        <div style="color:#b5d7ff; font-size:0.98rem; margin-top:0.3rem;">
+          חובה לצרף <b>גייד שירה</b> (הקלטת שירה פשוטה עם הפלייבק, לא חובה מקצועית, רק שתהיה תואמת לקצב).
+        </div>
+      </div>
+      <div class="form-group">
+        <label>שלחו קישור להורדת הפלייבק + גייד שירה (WeTransfer, Google Drive וכו') *</label>
+        <input type="url" id="playback-link" name="קישור להורדה" placeholder="קישור לקובץ" required>
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="legal-check" required>
+          קראתי ואני מאשר/ת את ההצהרה המשפטית המפורטת מעלה
+        </label>
+      </div>
+      <button type="submit" class="submit-btn">שלח פלייבק</button>
+      <div id="form-msg"></div>
+    </form>
+  </div>
+  <script>
+    // --- Youtube links logic ---
+    const ytListDiv = document.getElementById('last-youtube-list');
+    const ytMsg = document.getElementById('yt-msg');
+    function extractYtId(url) {
+      let m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|shorts\/))([\w\-]{11})/);
+      return m ? m[1] : null;
+    }
+    function updateYtList() {
+      let arr = JSON.parse(localStorage.getItem('kar_youtube_list')||'[]');
+      ytListDiv.innerHTML = '';
+      arr.slice(-4).reverse().forEach(id => {
+        ytListDiv.innerHTML += `<div class="yt-embed">
+          <iframe src="https://www.youtube.com/embed/${id}" allowfullscreen></iframe>
+          <a href="https://youtu.be/${id}" target="_blank" rel="noopener">לצפייה ביוטיוב</a>
+        </div>`;
+      });
+    }
+    document.getElementById('add-youtube-btn').onclick = function() {
+      ytMsg.textContent = '';
+      const url = document.getElementById('youtube-link').value.trim();
+      const id = extractYtId(url);
+      if (!id) {
+        ytMsg.textContent = 'קישור לא חוקי. יש להדביק קישור תקני לסרטון ביוטיוב';
+        return;
+      }
+      let arr = JSON.parse(localStorage.getItem('kar_youtube_list')||'[]');
+      // הימנע כפילויות
+      arr = arr.filter(x=>x!==id);
+      arr.push(id);
+      if(arr.length>4) arr = arr.slice(arr.length-4);
+      localStorage.setItem('kar_youtube_list',JSON.stringify(arr));
+      document.getElementById('youtube-link').value = '';
+      updateYtList();
+    };
+    window.addEventListener('DOMContentLoaded', updateYtList);
+
+    // --- BPM/GUIDE logic ---
+    const bpmRadios = document.querySelectorAll('input[name="קצב תואם למקור"]');
+    const gaydGroup = document.getElementById('gayd-group');
+    bpmRadios.forEach(r => r.addEventListener('change', function() {
+      if(this.value==='לא') {
+        gaydGroup.style.display = 'block';
+        document.getElementById('bpm').required = true;
+      } else {
+        gaydGroup.style.display = 'none';
+        document.getElementById('bpm').required = false;
+        document.getElementById('bpm').value = '';
+      }
+    }));
+
+    // --- Form validation & feedback (client side) ---
+    const form = document.getElementById('playback-form');
+    form.onsubmit = function(ev) {
+      const formMsg = document.getElementById('form-msg');
+      formMsg.innerHTML = '';
+      if(!document.getElementById('legal-check').checked) {
+        ev.preventDefault();
+        formMsg.innerHTML = `<div class="error-msg">יש לאשר את ההצהרה המשפטית</div>`;
+      }
+    };
+    // Success/error display for Formsubmit.co redirect
+    if(window.location.search.includes('success=')) {
+      document.getElementById('form-msg').innerHTML = `<div class="success-msg">הפרטים נשלחו בהצלחה! תודה על תרומתך 🙏<br>נחזור אליך במייל בהקדם.</div>`;
+    }
+  </script>
+</body>
+</html>
